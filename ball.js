@@ -10,11 +10,15 @@ export default class Ball {
 
         this.game = game;
 
-        this.position = { x: 10, y: 400 };
-        this.speed = { x: 4, y: -2 };
         this.size = 16;
+        this.reset();
 
         //console.log(this.game.paddle.position.y);
+    }
+
+    reset() {
+        this.position = { x: 10, y: 400 };
+        this.speed = { x: 4, y: -2 };
     }
 
     draw(context) {
@@ -33,9 +37,14 @@ export default class Ball {
         if (this.position.x + this.size > this.gameWidth || this.position.x < 0) {
             this.speed.x = -this.speed.x;
         }
-        //wall on top or bottom
-        if (this.position.y + this.size > this.gameHeight || this.position.y < 0) {
+        //top
+        if (this.position.y < 0) {
             this.speed.y = -this.speed.y;
+        }
+        //bottom
+        if (this.position.y + this.size > this.gameHeight) {
+            this.game.lives--;
+            this.reset();
         }
         //paddle collision
         if (detectCollision(this, this.game.paddle)) {
