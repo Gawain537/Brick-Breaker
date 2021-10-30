@@ -10,7 +10,7 @@ export default class Paddle {
         this.maxSpeed = 10;
         this.speed = 0;
 
-        this.positon = {
+        this.position = {
             x: game.gameWidth / 2 - this.width / 2,
             y: game.gameHeight - this.height - 10
         };
@@ -31,18 +31,18 @@ export default class Paddle {
 
     draw(context) {
         context.fillStyle = '#0ff';
-        context.fillRect(this.positon.x, this.positon.y, this.width, this.height);
+        context.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 
     update(deltaTime) {
 
-        this.positon.x += this.speed; //movement
+        this.position.x += this.speed; //movement
 
         //boundaries
-        if (this.positon.x < 0) this.positon.x = 0; //left
+        if (this.position.x < 0) this.position.x = 0; //left
 
-        if (this.positon.x + this.width > this.gameWidth) { //right
-            this.positon.x = this.gameWidth - this.width;
+        if (this.position.x + this.width > this.gameWidth) { //right
+            this.position.x = this.gameWidth - this.width;
         }
 
     }
