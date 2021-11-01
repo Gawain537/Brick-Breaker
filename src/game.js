@@ -1,9 +1,9 @@
-import Paddle from './paddle.js';
-import InputHandler from './input.js'
-import Ball from './ball.js'
-import Brick from './brick.js'
+import Paddle from '/src/paddle.js';
+import InputHandler from '/src/input.js'
+import Ball from '/src/ball.js'
+import Brick from '/src/brick.js'
 
-import { buildLevel, level1, level2 } from './levels.js';
+import { buildLevel, level1, level2 } from '/src/levels.js';
 
 const GAMESTATE = {
     PAUSED: 0,
@@ -32,13 +32,11 @@ export default class Game {
     }
 
     start() {
-        console.log("Start1");
         if (this.gamestate !== GAMESTATE.MENU &&
             this.gamestate !== GAMESTATE.NEWLEVEL
         ) {
             return;
         }
-        console.log("Start2");
         this.bricks = buildLevel(this, this.levels[this.currentLevel]);
         this.ball.reset();
         //array of objects; more scalable for updating and drawing

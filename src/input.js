@@ -1,4 +1,4 @@
-import Game from "./game.js";
+import Game from "/src/game.js";
 
 export default class InputHandler {
 

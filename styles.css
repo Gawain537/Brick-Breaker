@@ -5,3 +5,6 @@ div {
     text-align: center;
     font-weight: bold;
   }
+  canvas {
+    background-color: black;
+}

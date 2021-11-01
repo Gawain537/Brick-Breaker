@@ -1,4 +1,4 @@
-import { detectCollision } from './collisionDetection.js';
+import { detectCollision } from '/src/collisionDetection.js';
 
 export default class Ball {
 
@@ -22,11 +22,16 @@ export default class Ball {
     }
 
     draw(context) {
-        context.drawImage(this.image,
+        /*context.drawImage(this.image,
             this.position.x,
             this.position.y,
             this.size,
-            this.size);
+            this.size); */
+
+            context.fillStyle = '#fff';
+            context.beginPath();
+            context.arc(this.position.x-8, this.position.y+8, 8, 0, 2 * Math.PI);
+            context.fill();
     }
 
     update(deltaTime) {
