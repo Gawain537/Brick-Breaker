@@ -3,7 +3,7 @@ import InputHandler from '../src/input.js'
 import Ball from '../src/ball.js'
 import Brick from '../src/brick.js'
 
-import { buildLevel, level1, level2 } from '/src/levels.js';
+import { buildLevel, level1, level2 } from '../src/levels.js';
 
 const GAMESTATE = {
     PAUSED: 0,
