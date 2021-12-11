@@ -1,7 +1,7 @@
-import Paddle from '/src/paddle.js';
-import InputHandler from '/src/input.js'
-import Ball from '/src/ball.js'
-import Brick from '/src/brick.js'
+import Paddle from '../src/paddle.js';
+import InputHandler from '../src/input.js'
+import Ball from '../src/ball.js'
+import Brick from '../src/brick.js'
 
 import { buildLevel, level1, level2 } from '/src/levels.js';
 
